@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title> aplicacion2</title>
+</head>
+<body>
+    <style>
+        body{
+            font-size: 30px;
+            background-color:darkkhaki;
+        }
+
+        #mensaje{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+
+    <h1>Categoria Deportiva</h1>
+<!--
+    Aplicacion 2. Escriba un algoritmo que determine la categoria deportiva de un usuario en función de su edad.
+      - Menor de 7 años: “benjamin”
+      - 8 a 9 años: “ alevin”
+      - 10 a 11 años: “infantil”
+      - 12 años y mas: “cadete”   
+      
+      
+        Entrada:
+       - edad: numero. 
+
+         Salida: 
+       - ('Benajamin' o 'Alevin' o 'Infantil'o 'Cadete'): cadena de caracter
+
+    -->
+    <script>
+        function mostrarVal(edad){
+            document.getElementById("valBox").innerHTML =edad;
+
+
+            if(edad <= 7){
+                document.getElementById("mensaje").innerHTML = "BENJAMIN";
+            }else if(edad <= 9){
+                document.getElementById("mensaje").innerHTML = "ALEVÍN";
+            }else if(edad <= 11){
+                document.getElementById("mensaje").innerHTML = "INFANTIL";
+            }else if(edad <= 12){
+                document.getElementById("mensaje").innerHTML = "CADETE";
+            }
+        }
+    </script>
+
+     Edad:<span id="valBox"></span>
+     <input
+       type="range"
+       min="3"
+       max="14"
+       step="1"
+       oninput="mostrarVal(this.value)"
+       onchange="mostrarVal(this.value)"
+     />
+     <div id="mensaje"></div>
+     
+</body>
+</html>
