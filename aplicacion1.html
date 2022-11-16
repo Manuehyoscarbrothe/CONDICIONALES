@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>aplicacion1</title>
+</head>
+<body>
+    <!--
+    Aplicacion 1. Escriba, usando comparaciones, un algoritmo 
+    que muestre el estado del agua (hielo, liquido, vapor) 
+    en funcion de su temperatura.
+
+    Entrada:
+       - temperatura: numero. 
+
+    Salida: 
+       - ('Hielo' o 'Liquido' o 'Vapor'): cadena de caracter
+
+-->
+<style>
+    body{
+        background-color:blue;
+        color:red;
+        font-size:50px;    
+    }
+    .hielo{
+        color:darkturquoise;
+        background-color:azure;
+    }
+    .liquido{
+        color:blue;
+        background-color:aquamarine;
+    }
+    .vapor{
+        color:darkgrey;
+        background-color:bisque;
+    }
+    #dato_entrada{
+       width: 75px; 
+       height: 100px;   
+       font-size: 55px;
+    }
+    #boton{
+        width: 150px; 
+       height: 85px;   
+       font-size: 30px;
+       background:gold;
+       font-family:fantasy;
+    }
+</style>
+<script>
+    //Cuando pulsamos el boton (evento onclick)
+    function verEstadoAgua(){
+
+        //variable para guardar la temperatura.
+        var temperatura = parseInt(document.getElementById("dato_entrada").value);
+
+        if(temperatura < 0){
+            //alert("Hielo")
+            document.getElementById("mensaje_salida").innerHTML = "<span class='hielo'>HIELO</span>";
+
+        }else if(temperatura < 100){
+            //alert("Liquido")
+            document.getElementById("mensaje_salida").innerHTML = "<span class='liquido'>LIQUIDO</span>";
+        }else{
+            //alert("Vapor")
+            document.getElementById("mensaje_salida").innerHTML = "<span class='vapor'>VAPOR</span>";
+        }
+    }
+</script>
+<h1>Estado del agua</h1>
+Temperatura: <input type="number" id="dato_entrada">
+<input type="button" value="Ver estado" onclick="verEstadoAgua()" id="boton">
+<div id="mensaje_salida"></div>
+
+
+
+
+
+    
+</body>
+</html>
